@@ -1,0 +1,21 @@
+{
+    "name": "eden-php/sqlite",
+    "type": "library",
+    "description": "Eden SQLite Search, Collection, Model ORM",
+    "keywords": ["eden", "library"],
+    "homepage": "http://eden-php.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Blanquera",
+            "email": "cblanquera@openovate.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.1",
+		"eden-php/sql": ">=1.0.0"
+    },
+    "autoload": {
+         "psr-0": { "Eden\\": "library/" }
+    }
+}
