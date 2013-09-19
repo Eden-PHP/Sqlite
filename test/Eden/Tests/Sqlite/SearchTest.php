@@ -13,7 +13,7 @@ class Eden_Tests_Sqlite_SearchTest extends \PHPUnit_Framework_TestCase
 	
 	public function setUp() {
 		date_default_timezone_set('GMT');
-		self::$database = eden('sqlite', __DIR__.'/../../../../assets/unit.db');
+		self::$database = eden('sqlite', realpath(__DIR__.'/../../../assets').'/unit.db');
 	}
 	
 	/* FACTORY METHODS */

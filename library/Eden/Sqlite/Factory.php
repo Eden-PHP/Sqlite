@@ -27,13 +27,13 @@ use Eden\Sql\Select as SqlSelect;
  */
 class Factory extends SqlFactory 
 {
-	protected $file = null;
+	protected $path = null;
 	
-	public function __construct($file) 
+	public function __construct($path) 
 	{
 		//argument test
 		Argument::i()->test(1, 'string');
-		$this->file = $file;
+		$this->path = $path;
 	}	
 	
 	/**
@@ -57,8 +57,8 @@ class Factory extends SqlFactory
 	 */
 	public function connect(array $options = array()) 
 	{
-		$this->connection = new PDO('sqlite:'.$this->file);
-		$this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$this->connection = new \PDO('sqlite:'.$this->path);
+		$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 		$this->trigger('connect');
 		
 		return $this;
@@ -241,6 +241,33 @@ class Factory extends SqlFactory
 		}
 		
 		return $newResults;
+	}
+	
+	/**
+	 * Inserts multiple rows into a table
+	 *
+	 * @param string table
+	 * @param array settings
+	 * @param bool|array
+	 * @return Eden\Sql\Factory
+	 */
+	public function insertRows($table, array $settings, $bind = true) 
+	{
+		//argument test
+		Argument::i()
+			//Argument 1 must be a string
+			->test(1, 'string')   		
+			//Argument 3 must be an array or bool
+			->test(3, 'array', 'bool');	
+		
+		//this is an array of arrays
+		foreach($settings as $index => $setting) {
+			//SQLite no available multi insert
+			//there's work arounds, but no performance gain
+			$this->insertRow($table, $setting, $bind);	
+		}
+		
+		return $this;
 	}
 	
 	/**

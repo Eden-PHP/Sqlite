@@ -18,7 +18,7 @@ use Eden\Sql\Query as SqlQuery;
  * @package Sqlite
  * @author Christian Blanquera cblanquera@openovate.com
  */
-class Eden_Sqlite_Create extends SqlQuery {
+class Create extends SqlQuery {
 	protected $name	= null;
 	protected $comments = null;
 	protected $fields = array();

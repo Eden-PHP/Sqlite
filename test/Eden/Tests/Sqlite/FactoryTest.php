@@ -13,7 +13,32 @@ class Eden_Tests_Sqlite_FactoryTest extends \PHPUnit_Framework_TestCase
 	
 	public function setUp() {
 		date_default_timezone_set('GMT');
-		self::$database = eden('sqlite', __DIR__.'/../../../../assets/unit.db');
+		self::$database = eden('sqlite', realpath(__DIR__.'/../../../assets').'/unit.db');
+		
+		/*self::$database->query('CREATE TABLE "unit_post" (
+			"post_id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+			"post_slug" VARCHAR NOT NULL UNIQUE, "post_title" VARCHAR, 
+			"post_detail" TEXT, "post_active" SMALLINT NOT NULL DEFAULT 1, 
+			"post_type" VARCHAR NOT NULL DEFAULT post, 
+			"post_flag" SMALLINT NOT NULL DEFAULT 0, 
+			"post_visibility" VARCHAR NOT NULL DEFAULT public, 
+			"post_status" VARCHAR NOT NULL DEFAULT published, 
+			"post_published" DATE, 
+			"post_created" DATETIME NOT NULL, 
+			"post_updated" DATETIME NOT NULL);');*/
+		
+		/* Schema 
+			CREATE TABLE "unit_post" (
+			"post_id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+			"post_slug" VARCHAR NOT NULL UNIQUE, "post_title" VARCHAR, 
+			"post_detail" TEXT, "post_active" SMALLINT NOT NULL DEFAULT 1, 
+			"post_type" VARCHAR NOT NULL DEFAULT post, 
+			"post_flag" SMALLINT NOT NULL DEFAULT 0, 
+			"post_visibility" VARCHAR NOT NULL DEFAULT public, 
+			"post_status" VARCHAR NOT NULL DEFAULT published, 
+			"post_published" DATE, 
+			"post_created" DATETIME NOT NULL, 
+			"post_updated" DATETIME NOT NULL); */
 	}
 	
 	/* FACTORY METHODS */
