@@ -1,7 +1,7 @@
 {
     "name": "eden-php/sqlite",
     "type": "library",
-    "description": "Eden Sqlite ORM Component",
+    "description": "Eden SQLite Search, Collection, Model ORM component",
     "keywords": ["eden", "library"],
     "homepage": "http://eden-php.com",
     "license": "MIT",
