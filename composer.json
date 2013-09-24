@@ -13,11 +13,11 @@
     ],
     "require": {
         "php": ">=5.3.1",
-		"eden-php/core": "1.*",
-		"eden-php/type": "1.*",
-		"eden-php/collection": "1.*",
-		"eden-php/model": "1.*",
-		"eden-php/sql": "1.*"
+		"eden/core": "1.*",
+		"eden/type": "1.*",
+		"eden/collection": "1.*",
+		"eden/model": "1.*",
+		"eden/sql": "1.*"
     },
     "autoload": {
          "psr-0": { "Eden\\Sqlite": "" }
