@@ -1,5 +1,5 @@
 {
-    "name": "eden-php/sqlite",
+    "name": "eden/sqlite",
     "type": "library",
     "description": "Eden SQLite Search, Collection, Model ORM component",
     "keywords": ["eden", "library"],
