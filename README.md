@@ -299,7 +299,7 @@ If you look at our PostGreSQL or even our MySQL documentation. You'll realize th
 
 ====
 
-#Contibuting to Eden
+#Contributing to Eden
 
 ##Setting up your machine with the Eden repository and your fork
 
