@@ -304,7 +304,7 @@ If you look at our PostGreSQL or even our MySQL documentation. You'll realize th
 ##Setting up your machine with the Eden repository and your fork
 
 1. Fork the main Eden repository (https://github.com/Eden-PHP/Sqlite)
-2. Fire up your local terminal and clone the *MAIN EDEN REPOSITORY* (git clone git://github.com/Eden-PHP/Core.git)
+2. Fire up your local terminal and clone the *MAIN EDEN REPOSITORY* (git clone git://github.com/Eden-PHP/Sqlite.git)
 3. Add your *FORKED EDEN REPOSITORY* as a remote (git remote add fork git@github.com:*github_username*/Sqlite.git)
 
 ##Making pull requests
