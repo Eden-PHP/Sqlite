@@ -9,16 +9,14 @@
 
 namespace Eden\Sqlite;
 
-use Eden\Sql\Query as SqlQuery;
-
 /**
  * Generates create table query string syntax
  *
  * @vendor Eden
- * @package Sqlite
+ * @package sqlite
  * @author Christian Blanquera cblanquera@openovate.com
  */
-class Create extends SqlQuery {
+class Create extends \Eden\Sql\Query {
 	protected $name	= null;
 	protected $comments = null;
 	protected $fields = array();
@@ -43,7 +41,7 @@ class Create extends SqlQuery {
 	 *
 	 * @param string name
 	 * @param array attributes
-	 * @return Eden\Sqlite\Create
+	 * @return this
 	 */
 	public function addField($name, array $attributes) 
 	{
@@ -59,7 +57,7 @@ class Create extends SqlQuery {
 	 *
 	 * @param string name
 	 * @param array fields
-	 * @return Eden\Sqlite\Create
+	 * @return this
 	 */
 	public function addForeignKey($name, $table, $key) 
 	{
@@ -78,7 +76,7 @@ class Create extends SqlQuery {
 	 *
 	 * @param string name
 	 * @param array fields
-	 * @return Eden\Sqlite\Create
+	 * @return this
 	 */
 	public function addUniqueKey($name, array $fields) 
 	{
@@ -162,7 +160,7 @@ class Create extends SqlQuery {
 	 * Sets comments
 	 *
 	 * @param string comments
-	 * @return Eden\Sqlite\Create
+	 * @return this
 	 */
 	public function setComments($comments) 
 	{
@@ -177,7 +175,7 @@ class Create extends SqlQuery {
 	 * Sets a list of fields to the table
 	 *
 	 * @param array fields
-	 * @return Eden\Sqlite\Create
+	 * @return this
 	 */
 	public function setFields(array $fields) 
 	{
@@ -189,7 +187,7 @@ class Create extends SqlQuery {
 	 * Sets a list of keys to the table
 	 *
 	 * @param array keys
-	 * @return Eden\Sqlite\Create
+	 * @return this
 	 */
 	public function setForiegnKeys(array $keys) 
 	{
@@ -201,7 +199,7 @@ class Create extends SqlQuery {
 	 * Sets the name of the table you wish to create
 	 *
 	 * @param string name
-	 * @return Eden\Sqlite\Create
+	 * @return this
 	 */
 	public function setName($name) 
 	{
@@ -216,7 +214,7 @@ class Create extends SqlQuery {
 	 * Sets a list of unique keys to the table
 	 *
 	 * @param array uniqueKeys
-	 * @return Eden\Sqlite\Create
+	 * @return this
 	 */
 	public function setUniqueKeys(array $uniqueKeys) 
 	{

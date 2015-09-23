@@ -1,7 +1,7 @@
 {
     "name": "eden/sqlite",
     "type": "library",
-    "description": "Eden SQLite Search, Collection, Model ORM component",
+    "description": "Eden SQLite Search, Collection, Model ORM componen",
     "keywords": ["eden", "library"],
     "homepage": "http://eden-php.com",
     "license": "MIT",
@@ -13,14 +13,10 @@
     ],
     "require": {
         "php": ">=5.3.1",
-		"eden/core": "1.*",
-		"eden/type": "1.*",
-		"eden/collection": "1.*",
-		"eden/model": "1.*",
-		"eden/sql": "1.*"
+        "eden/collection": "4.x-dev",
+        "eden/sql": "4.x-dev"
     },
     "autoload": {
-         "psr-0": { "Eden\\Sqlite": "" }
-    },
-	"target-dir": "Eden/Sqlite"
+         "psr-4": { "Eden\\Postgre\\": "/src" }
+    }
 }

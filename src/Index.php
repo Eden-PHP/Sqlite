@@ -9,9 +9,6 @@
 
 namespace Eden\Sqlite;
 
-use Eden\Sql\Factory as SqlFactory;
-use Eden\Sql\Select as SqlSelect;
-
 /**
  * Abstractly defines a layout of available methods to
  * connect to and query a SQLite database. This class also 
@@ -25,7 +22,7 @@ use Eden\Sql\Select as SqlSelect;
  * @package Sqlite
  * @author Christian Blanquera cblanquera@openovate.com
  */
-class Factory extends SqlFactory 
+class Index extends \Eden\Sql\Index 
 {
 	protected $path = null;
 	
@@ -53,7 +50,7 @@ class Factory extends SqlFactory
 	 * Connects to the database
 	 * 
 	 * @param array the connection options
-	 * @return Eden\Sqlite\Factory
+	 * @return Eden\Sqlite\Index
 	 */
 	public function connect(array $options = array()) 
 	{
@@ -249,7 +246,7 @@ class Factory extends SqlFactory
 	 * @param string table
 	 * @param array settings
 	 * @param bool|array
-	 * @return Eden\Sql\Factory
+	 * @return this
 	 */
 	public function insertRows($table, array $settings, $bind = true) 
 	{
@@ -280,7 +277,7 @@ class Factory extends SqlFactory
 		//Argument 1 must be a string or array
 		Argument::i()->test(1, 'string', 'array');
 		
-		return SqlSelect::i($select);
+		return \Eden\Sql\Select::i($select);
 	}
 	
 	/**

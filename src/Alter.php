@@ -9,16 +9,14 @@
 
 namespace Eden\Sqlite;
 
-use Eden\Sql\Query as SqlQuery;
-
 /**
  * Generates alter query string syntax
  *
  * @vendor Eden
- * @package Sqlite
+ * @package sqlite
  * @author Christian Blanquera cblanquera@openovate.com
  */
-class Alter extends SqlQuery 
+class Alter extends \Eden\Sql\Query 
 {
 	protected $name = null;
 	protected $changeFields = array();
@@ -48,7 +46,7 @@ class Alter extends SqlQuery
 	 *
 	 * @param string name
 	 * @param array attributes
-	 * @return Eden\Sqlite\Alter
+	 * @return this
 	 */
 	public function addField($name, array $attributes) 
 	{
@@ -63,7 +61,7 @@ class Alter extends SqlQuery
 	 * Adds an index key
 	 *
 	 * @param string name
-	 * @return Eden\Sqlite\Alter
+	 * @return this
 	 */
 	public function addForeignKey($name, $table, $key) 
 	{
@@ -84,7 +82,7 @@ class Alter extends SqlQuery
 	 * Adds a unique key
 	 *
 	 * @param string name
-	 * @return Eden\Sqlite\Alter
+	 * @return this
 	 */
 	public function addUniqueKey($name) 
 	{
@@ -101,7 +99,7 @@ class Alter extends SqlQuery
 	 *
 	 * @param string name
 	 * @param array attributes
-	 * @return Eden\Sqlite\Alter
+	 * @return this
 	 */
 	public function changeField($name, array $attributes) 
 	{
@@ -225,7 +223,7 @@ class Alter extends SqlQuery
 	 * Removes a field
 	 *
 	 * @param string name
-	 * @return Eden\Sqlite\Alter
+	 * @return this
 	 */
 	public function removeField($name) 
 	{
@@ -240,7 +238,7 @@ class Alter extends SqlQuery
 	 * Removes an index key
 	 *
 	 * @param string name
-	 * @return Eden\Sqlite\Alter
+	 * @return this
 	 */
 	public function removeForeignKey($name) 
 	{
@@ -255,7 +253,7 @@ class Alter extends SqlQuery
 	 * Removes a unique key
 	 *
 	 * @param string name
-	 * @return Eden\Sqlite\Alter
+	 * @return this
 	 */
 	public function removeUniqueKey($name) 
 	{
@@ -270,7 +268,7 @@ class Alter extends SqlQuery
 	 * Sets the name of the table you wish to create
 	 *
 	 * @param string name
-	 * @return Eden\Sqlite\Alter
+	 * @return this
 	 */
 	public function setName($name) 
 	{

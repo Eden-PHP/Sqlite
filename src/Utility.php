@@ -9,16 +9,14 @@
 
 namespace Eden\Sqlite;
 
-use Eden\Sql\Query as SqlQuery;
-
 /**
  * Generates utility query strings
  *
  * @vendor Eden
- * @package Sqlite
+ * @package sqlite
  * @author Christian Blanquera cblanquera@openovate.com
  */
-class Utility extends SqlQuery
+class Utility extends \Eden\Sql\Query
 {
 	protected $query = null;
 	
