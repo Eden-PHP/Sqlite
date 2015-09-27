@@ -17,6 +17,6 @@
         "eden/sql": "4.x-dev"
     },
     "autoload": {
-         "psr-4": { "Eden\\Postgre\\": "/src" }
+         "psr-4": { "Eden\\Sqlite\\": "/src" }
     }
 }
