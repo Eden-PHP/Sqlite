@@ -179,8 +179,7 @@ class Index extends \Eden\Sql\Index
                     'auto_increment'    => $increment));
                 
                 //set keys where found
-                switch($field['Key'])
-                {
+                switch ($field['Key']) {
                     case 'PRI':
                         $query->addPrimaryKey($field['Field']);
                         break;
