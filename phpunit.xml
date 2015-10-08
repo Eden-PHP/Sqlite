@@ -9,11 +9,14 @@
          processIsolation="false"
          stopOnFailure="false"
          syntaxCheck="false"
-         bootstrap="Tests/bootstrap.php"
+         bootstrap="test/bootstrap.php"
 >
   <testsuites>
     <testsuite name="Eden SQLite Test Suite">
-      <directory>./Tests/Sqlite</directory>
+      <directory>test/Collection.php</directory>
+      <directory>test/Index.php</directory>
+      <directory>test/Model.php</directory>
+      <directory>test/Search.php</directory>
     </testsuite>
   </testsuites>
 

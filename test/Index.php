@@ -7,13 +7,13 @@
  * distributed with this package.
  */
  
-class Eden_Sqlite_Tests_Sqlite_FactoryTest extends \PHPUnit_Framework_TestCase
+class EdenSqliteTestSqliteFactoryTest extends PHPUnit_Framework_TestCase
 {
 	public static $database;
 	
 	public function setUp() {
 		date_default_timezone_set('GMT');
-		self::$database = eden('sqlite', realpath(__DIR__.'/../assets').'/unit.db');
+		self::$database = eden('sqlite', realpath(__DIR__.'/assets').'/unit.db');
 		
 		/*self::$database->query('CREATE TABLE "unit_post" (
 			"post_id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
