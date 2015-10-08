@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/Eden-PHP/Sqlite.png)](https://travis-ci.org/Eden-PHP/Sqlite)
+====
 # SQLite
 
 - [Basic Querying](#basic)

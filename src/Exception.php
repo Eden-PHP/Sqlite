@@ -9,18 +9,13 @@
 
 namespace Eden\Sqlite;
 
-use Eden\Core\Base as CoreBase;
-
 /**
- * The base class for all classes wishing to integrate with Eden.
- * Extending this class will allow your methods to seemlessly be
- * overloaded and overrided as well as provide some basic class
- * loading patterns.
+ * Sql Errors
  *
  * @vendor Eden
- * @package Sqlite
+ * @package sqlite
  * @author Christian Blanquera cblanquera@openovate.com
  */
-class Base extends CoreBase
+class Exception extends \Eden\Sql\Exception
 {
 }

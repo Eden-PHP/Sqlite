@@ -9,8 +9,6 @@
 
 namespace Eden\Sqlite;
 
-use Eden\Core\Argument as CoreArgument;
-
 /**
  * The base class for any class handling exceptions. Exceptions
  * allow an application to custom handle errors that would
@@ -20,9 +18,9 @@ use Eden\Core\Argument as CoreArgument;
  * started to where the program stopped.
  *
  * @vendor Eden
- * @package Sqlite
+ * @package sqlite
  * @author Christian Blanquera cblanquera@openovate.com
  */
-class Argument extends CoreArgument
+class Argument extends \Eden\Core\Argument
 {
 }
