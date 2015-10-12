@@ -15,9 +15,10 @@ namespace Eden\Sqlite;
  * overloaded and overrided as well as provide some basic class
  * loading patterns.
  *
- * @vendor Eden
- * @package sqlite
- * @author Christian Blanquera cblanquera@openovate.com
+ * @vendor   Eden
+ * @package  sqlite
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Base extends \Eden\Core\Base
 {

@@ -12,9 +12,10 @@ namespace Eden\Sqlite;
 /**
  * Generates alter query string syntax
  *
- * @vendor Eden
- * @package sqlite
- * @author Christian Blanquera cblanquera@openovate.com
+ * @vendor   Eden
+ * @package  sqlite
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Alter extends \Eden\Sql\Query
 {
@@ -46,6 +47,7 @@ class Alter extends \Eden\Sql\Query
      *
      * @param string name
      * @param array attributes
+     *
      * @return this
      */
     public function addField($name, array $attributes)
@@ -61,6 +63,7 @@ class Alter extends \Eden\Sql\Query
      * Adds an index key
      *
      * @param string name
+     *
      * @return this
      */
     public function addForeignKey($name, $table, $key)
@@ -82,6 +85,7 @@ class Alter extends \Eden\Sql\Query
      * Adds a unique key
      *
      * @param string name
+     *
      * @return this
      */
     public function addUniqueKey($name)
@@ -99,6 +103,7 @@ class Alter extends \Eden\Sql\Query
      *
      * @param string name
      * @param array attributes
+     *
      * @return this
      */
     public function changeField($name, array $attributes)
@@ -114,6 +119,7 @@ class Alter extends \Eden\Sql\Query
      * Returns the string version of the query
      *
      * @param  bool
+     *
      * @return string
      */
     public function getQuery($unbind = false)
@@ -225,6 +231,7 @@ class Alter extends \Eden\Sql\Query
      * Removes a field
      *
      * @param string name
+     *
      * @return this
      */
     public function removeField($name)
@@ -240,6 +247,7 @@ class Alter extends \Eden\Sql\Query
      * Removes an index key
      *
      * @param string name
+     *
      * @return this
      */
     public function removeForeignKey($name)
@@ -255,6 +263,7 @@ class Alter extends \Eden\Sql\Query
      * Removes a unique key
      *
      * @param string name
+     *
      * @return this
      */
     public function removeUniqueKey($name)
@@ -270,6 +279,7 @@ class Alter extends \Eden\Sql\Query
      * Sets the name of the table you wish to create
      *
      * @param string name
+     *
      * @return this
      */
     public function setName($name)

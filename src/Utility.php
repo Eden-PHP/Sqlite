@@ -12,9 +12,10 @@ namespace Eden\Sqlite;
 /**
  * Generates utility query strings
  *
- * @vendor Eden
- * @package sqlite
- * @author Christian Blanquera cblanquera@openovate.com
+ * @vendor   Eden
+ * @package  sqlite
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Utility extends \Eden\Sql\Query
 {
@@ -24,6 +25,7 @@ class Utility extends \Eden\Sql\Query
      * Query for dropping a table
      *
      * @param string the name of the table
+     *
      * @return this
      */
     public function dropTable($table)
@@ -50,6 +52,7 @@ class Utility extends \Eden\Sql\Query
      *
      * @param string the name of the table
      * @param string the new name of the table
+     *
      * @return this
      */
     public function renameTable($table, $name)
@@ -65,6 +68,7 @@ class Utility extends \Eden\Sql\Query
      * Query for showing all columns of a table
      *
      * @param string the name of the table
+     *
      * @return this
      */
     public function showColumns($table)
@@ -80,6 +84,7 @@ class Utility extends \Eden\Sql\Query
      * Query for showing all tables
      *
      * @param string like
+     *
      * @return this
      */
     public function showTables()
@@ -92,6 +97,7 @@ class Utility extends \Eden\Sql\Query
      * Query for truncating a table
      *
      * @param string the name of the table
+     *
      * @return this
      */
     public function truncate($table)

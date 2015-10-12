@@ -12,9 +12,10 @@ namespace Eden\Sqlite;
 /**
  * Sql Errors
  *
- * @vendor Eden
- * @package sqlite
- * @author Christian Blanquera cblanquera@openovate.com
+ * @vendor   Eden
+ * @package  sqlite
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Exception extends \Eden\Sql\Exception
 {

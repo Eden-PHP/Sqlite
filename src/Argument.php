@@ -17,9 +17,10 @@ namespace Eden\Sqlite;
  * outputs a trace (can be turned off) that shows where the problem
  * started to where the program stopped.
  *
- * @vendor Eden
- * @package sqlite
- * @author Christian Blanquera cblanquera@openovate.com
+ * @vendor   Eden
+ * @package  sqlite
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Argument extends \Eden\Core\Argument
 {

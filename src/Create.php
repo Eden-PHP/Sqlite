@@ -12,9 +12,10 @@ namespace Eden\Sqlite;
 /**
  * Generates create table query string syntax
  *
- * @vendor Eden
- * @package sqlite
- * @author Christian Blanquera cblanquera@openovate.com
+ * @vendor   Eden
+ * @package  sqlite
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Create extends \Eden\Sql\Query
 {
@@ -42,6 +43,7 @@ class Create extends \Eden\Sql\Query
      *
      * @param string name
      * @param array attributes
+     *
      * @return this
      */
     public function addField($name, array $attributes)
@@ -58,6 +60,7 @@ class Create extends \Eden\Sql\Query
      *
      * @param string name
      * @param array fields
+     *
      * @return this
      */
     public function addForeignKey($name, $table, $key)
@@ -77,6 +80,7 @@ class Create extends \Eden\Sql\Query
      *
      * @param string name
      * @param array fields
+     *
      * @return this
      */
     public function addUniqueKey($name, array $fields)
@@ -92,6 +96,7 @@ class Create extends \Eden\Sql\Query
      * Returns the string version of the query
      *
      * @param  bool
+     *
      * @return string
      */
     public function getQuery($unbind = false)
@@ -165,6 +170,7 @@ class Create extends \Eden\Sql\Query
      * Sets comments
      *
      * @param string comments
+     *
      * @return this
      */
     public function setComments($comments)
@@ -180,6 +186,7 @@ class Create extends \Eden\Sql\Query
      * Sets a list of fields to the table
      *
      * @param array fields
+     *
      * @return this
      */
     public function setFields(array $fields)
@@ -192,6 +199,7 @@ class Create extends \Eden\Sql\Query
      * Sets a list of keys to the table
      *
      * @param array keys
+     *
      * @return this
      */
     public function setForiegnKeys(array $keys)
@@ -204,6 +212,7 @@ class Create extends \Eden\Sql\Query
      * Sets the name of the table you wish to create
      *
      * @param string name
+     *
      * @return this
      */
     public function setName($name)
@@ -219,6 +228,7 @@ class Create extends \Eden\Sql\Query
      * Sets a list of unique keys to the table
      *
      * @param array uniqueKeys
+     *
      * @return this
      */
     public function setUniqueKeys(array $uniqueKeys)
