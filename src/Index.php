@@ -1,9 +1,9 @@
 <?php //-->
-/*
- * This file is part of the Sqlite package of the Eden PHP Library.
- * (c) 2013-2014 Openovate Labs
+/**
+ * This file is part of the Eden PHP Library.
+ * (c) 2014-2016 Openovate Labs
  *
- * Copyright and license information can be found at LICENSE
+ * Copyright and license information can be found at LICENSE.txt
  * distributed with this package.
  */
 
@@ -25,8 +25,16 @@ namespace Eden\Sqlite;
  */
 class Index extends \Eden\Sql\Index
 {
+    /**
+     * @var string $path Sqlite file path
+     */
     protected $path = null;
     
+    /**
+     * Construct: Store connection information
+     *
+     * @param *string $path Sqlite file path
+     */
     public function __construct($path)
     {
         //argument test
@@ -36,6 +44,8 @@ class Index extends \Eden\Sql\Index
     
     /**
      * Returns the alter query builder
+     *
+     * @param *string $name Name of table
      *
      * @return Eden\Sqlite\Alter
      */
@@ -50,7 +60,7 @@ class Index extends \Eden\Sql\Index
     /**
      * Connects to the database
      *
-     * @param array the connection options
+     * @param array $options The connection options
      *
      * @return Eden\Sqlite\Index
      */
@@ -66,6 +76,8 @@ class Index extends \Eden\Sql\Index
     /**
      * Returns the create query builder
      *
+     * @param string $name Name of table
+     *
      * @return Eden\Sqlite\Create
      */
     public function create($name = null)
@@ -79,7 +91,7 @@ class Index extends \Eden\Sql\Index
     /**
      * Returns the columns and attributes given the table name
      *
-     * @param the name of the table
+     * @param *string $table The name of the table
      *
      * @return array|false
      */
@@ -112,7 +124,7 @@ class Index extends \Eden\Sql\Index
     /**
      * Peturns the primary key name given the table
      *
-     * @param string table
+     * @param *string $table The table name
      *
      * @return string
      */
@@ -146,6 +158,8 @@ class Index extends \Eden\Sql\Index
     /**
      * Returns the whole enitre schema and rows
      * of the current table
+     *
+     * @param *string $table The table name
      *
      * @return string
      */
@@ -221,7 +235,7 @@ class Index extends \Eden\Sql\Index
     /**
      * Returns a listing of tables in the DB
      *
-     * @param the like pattern
+     * @param string|null $like The like pattern
      *
      * @return attay|false
      */
@@ -247,11 +261,11 @@ class Index extends \Eden\Sql\Index
     /**
      * Inserts multiple rows into a table
      *
-     * @param string table
-     * @param array settings
-     * @param bool|array
+     * @param *string    $table   Table name
+     * @param array      $setting Key/value 2D array matching table columns
+     * @param bool|array $bind    Whether to compute with binded variables
      *
-     * @return this
+     * @return Eden\Sqlite\Index
      */
     public function insertRows($table, array $settings, $bind = true)
     {
@@ -274,6 +288,8 @@ class Index extends \Eden\Sql\Index
     
     /**
      * Returns the select query builder
+     *
+     * @param string|array $select Column list
      *
      * @return Eden\Sql\Select
      */

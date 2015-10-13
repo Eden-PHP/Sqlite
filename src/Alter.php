@@ -1,9 +1,9 @@
 <?php //-->
-/*
- * This file is part of the Sqlite package of the Eden PHP Library.
- * (c) 2013-2014 Openovate Labs
+/**
+ * This file is part of the Eden PHP Library.
+ * (c) 2014-2016 Openovate Labs
  *
- * Copyright and license information can be found at LICENSE
+ * Copyright and license information can be found at LICENSE.txt
  * distributed with this package.
  */
 
@@ -13,21 +13,60 @@ namespace Eden\Sqlite;
  * Generates alter query string syntax
  *
  * @vendor   Eden
- * @package  sqlite
+ * @package  Sqlite
  * @author   Christian Blanquera <cblanquera@openovate.com>
  * @standard PSR-2
  */
 class Alter extends \Eden\Sql\Query
 {
+    /**
+     * @var string|null $name Name of table
+     */
     protected $name = null;
+
+    /**
+     * @var array $changeFields List of fields to change
+     */
     protected $changeFields = array();
+
+    /**
+     * @var array $addFields List of fields to add
+     */
     protected $addFields = array();
+
+    /**
+     * @var array $removeFields List of fields to remove
+     */
     protected $removeFields = array();
+
+    /**
+     * @var array $addKeys List of keys to add
+     */
     protected $addKeys = array();
+
+    /**
+     * @var array $removeKeys List of keys to remove
+     */
     protected $removeKeys = array();
+
+    /**
+     * @var array $addUniqueKeys List of unique keys to add
+     */
     protected $addUniqueKeys = array();
+
+    /**
+     * @var array $removeUniqueKeys List of unique keys to remove
+     */
     protected $removeUniqueKeys = array();
+
+    /**
+     * @var array $addPrimaryKeys List of primary keys to add
+     */
     protected $addPrimaryKeys = array();
+
+    /**
+     * @var array $removePrimaryKeys List of primary keys to remove
+     */
     protected $removePrimaryKeys = array();
     
     /**
@@ -45,10 +84,10 @@ class Alter extends \Eden\Sql\Query
     /**
      * Adds a field in the table
      *
-     * @param string name
-     * @param array attributes
+     * @param *string $name       Column name
+     * @param *array  $attributes Column attributes
      *
-     * @return this
+     * @return Eden\Sqlite\Alter
      */
     public function addField($name, array $attributes)
     {
@@ -62,9 +101,9 @@ class Alter extends \Eden\Sql\Query
     /**
      * Adds an index key
      *
-     * @param string name
+     * @param *string $name Name of key
      *
-     * @return this
+     * @return Eden\Sqlite\Alter
      */
     public function addForeignKey($name, $table, $key)
     {
@@ -84,9 +123,9 @@ class Alter extends \Eden\Sql\Query
     /**
      * Adds a unique key
      *
-     * @param string name
+     * @param *string $name Name of key
      *
-     * @return this
+     * @return Eden\Sqlite\Alter
      */
     public function addUniqueKey($name)
     {
@@ -101,10 +140,10 @@ class Alter extends \Eden\Sql\Query
      * Changes attributes of the table given
      * the field name
      *
-     * @param string name
-     * @param array attributes
+     * @param *string $name       Column name
+     * @param *array  $attributes Column attributes
      *
-     * @return this
+     * @return Eden\Sqlite\Alter
      */
     public function changeField($name, array $attributes)
     {
@@ -118,7 +157,7 @@ class Alter extends \Eden\Sql\Query
     /**
      * Returns the string version of the query
      *
-     * @param  bool
+     * @param bool
      *
      * @return string
      */
@@ -230,9 +269,9 @@ class Alter extends \Eden\Sql\Query
     /**
      * Removes a field
      *
-     * @param string name
+     * @param *string $name Name of field
      *
-     * @return this
+     * @return Eden\Sqlite\Alter
      */
     public function removeField($name)
     {
@@ -246,9 +285,9 @@ class Alter extends \Eden\Sql\Query
     /**
      * Removes an index key
      *
-     * @param string name
+     * @param *string $name Name of key
      *
-     * @return this
+     * @return Eden\Sqlite\Alter
      */
     public function removeForeignKey($name)
     {
@@ -262,9 +301,9 @@ class Alter extends \Eden\Sql\Query
     /**
      * Removes a unique key
      *
-     * @param string name
+     * @param *string $name Name of key
      *
-     * @return this
+     * @return Eden\Sqlite\Alter
      */
     public function removeUniqueKey($name)
     {
@@ -278,9 +317,9 @@ class Alter extends \Eden\Sql\Query
     /**
      * Sets the name of the table you wish to create
      *
-     * @param string name
+     * @param *string $name Name of table
      *
-     * @return this
+     * @return Eden\Sqlite\Alter
      */
     public function setName($name)
     {
