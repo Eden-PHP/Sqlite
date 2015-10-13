@@ -1,9 +1,9 @@
 <?php //-->
-/*
- * This file is part of the Sqlite package of the Eden PHP Library.
- * (c) 2013-2014 Openovate Labs
+/**
+ * This file is part of the Eden PHP Library.
+ * (c) 2014-2016 Openovate Labs
  *
- * Copyright and license information can be found at LICENSE
+ * Copyright and license information can be found at LICENSE.txt
  * distributed with this package.
  */
 
@@ -12,23 +12,47 @@ namespace Eden\Sqlite;
 /**
  * Generates create table query string syntax
  *
- * @vendor Eden
- * @package sqlite
- * @author Christian Blanquera cblanquera@openovate.com
+ * @vendor   Eden
+ * @package  Sqlite
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Create extends \Eden\Sql\Query
 {
-    protected $name     = null;
+    /**
+     * @var string|null $name Name of table
+     */
+    protected $name = null;
+
+    /**
+     * @var string|null $comments Table comments
+     */
     protected $comments = null;
+
+    /**
+     * @var array $fields List of fields
+     */
     protected $fields = array();
+
+    /**
+     * @var array $keys List of key indexes
+     */
     protected $keys = array();
+
+    /**
+     * @var array $uniqueKeys List of unique keys
+     */
     protected $uniqueKeys = array();
+
+    /**
+     * @var array $primaryKeys List of primary keys
+     */
     protected $primaryKeys = array();
     
     /**
      * Construct: Set the table, if any
      *
-     * @param string|null
+     * @param string|null $name Name of table
      */
     public function __construct($name = null)
     {
@@ -40,9 +64,10 @@ class Create extends \Eden\Sql\Query
     /**
      * Adds a field in the table
      *
-     * @param string name
-     * @param array attributes
-     * @return this
+     * @param *string $name       Column name
+     * @param *array  $attributes Column attributes
+     *
+     * @return Eden\Sqlite\Create
      */
     public function addField($name, array $attributes)
     {
@@ -56,9 +81,11 @@ class Create extends \Eden\Sql\Query
     /**
      * Adds an index key
      *
-     * @param string name
-     * @param array fields
-     * @return this
+     * @param *string $name  Name of column
+     * @param *string $table Name of foreign table
+     * @param *string $key   Name of key
+     *
+     * @return Eden\Sqlite\Create
      */
     public function addForeignKey($name, $table, $key)
     {
@@ -75,9 +102,10 @@ class Create extends \Eden\Sql\Query
     /**
      * Adds a unique key
      *
-     * @param string name
-     * @param array fields
-     * @return this
+     * @param *string $name   Name of key
+     * @param *array  $fields List of key fields
+     *
+     * @return Eden\Sqlite\Create
      */
     public function addUniqueKey($name, array $fields)
     {
@@ -91,7 +119,8 @@ class Create extends \Eden\Sql\Query
     /**
      * Returns the string version of the query
      *
-     * @param  bool
+     * @param bool $unbind Whether to unbind variables
+     *
      * @return string
      */
     public function getQuery($unbind = false)
@@ -164,8 +193,9 @@ class Create extends \Eden\Sql\Query
     /**
      * Sets comments
      *
-     * @param string comments
-     * @return this
+     * @param *string $comments Table comments
+     *
+     * @return Eden\Sqlite\Create
      */
     public function setComments($comments)
     {
@@ -179,8 +209,9 @@ class Create extends \Eden\Sql\Query
     /**
      * Sets a list of fields to the table
      *
-     * @param array fields
-     * @return this
+     * @param *array $fields List of fields
+     *
+     * @return Eden\Sqlite\Create
      */
     public function setFields(array $fields)
     {
@@ -191,8 +222,9 @@ class Create extends \Eden\Sql\Query
     /**
      * Sets a list of keys to the table
      *
-     * @param array keys
-     * @return this
+     * @param array $keys A list of foreign keys
+     *
+     * @return Eden\Sqlite\Create
      */
     public function setForiegnKeys(array $keys)
     {
@@ -203,8 +235,9 @@ class Create extends \Eden\Sql\Query
     /**
      * Sets the name of the table you wish to create
      *
-     * @param string name
-     * @return this
+     * @param *string $name Table name
+     *
+     * @return Eden\Sqlite\Create
      */
     public function setName($name)
     {
@@ -218,8 +251,9 @@ class Create extends \Eden\Sql\Query
     /**
      * Sets a list of unique keys to the table
      *
-     * @param array uniqueKeys
-     * @return this
+     * @param *array $uniqueKeys List of unique keys
+     *
+     * @return Eden\Sqlite\Create
      */
     public function setUniqueKeys(array $uniqueKeys)
     {
