@@ -12,7 +12,7 @@
 <a name="install"></a>
 ## Install
 
-`composer install eden/sqlite`
+`composer require eden/sqlite`
 
 ====
 
